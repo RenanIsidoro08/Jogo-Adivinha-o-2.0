@@ -1,0 +1,168 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(500deg, #02ffff, #e100ff, #bd60c9, #00a2ff, #b602fd);
+    background-size: 1000% 1000%;
+    animation: gradientBackground 10s ease infinite;
+}
+
+#Menu, #novaPaginaFeedback {
+    text-align: center;
+    position: relative; 
+}
+
+#nomeBotaoContainer, #inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#caixaP, #paginaJogo, #resultadoPagina, #novaPaginaFeedback {
+    background-color: #dadada;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+input, button, textarea {
+    margin: 10px 0;
+}
+
+button {
+    color: white;
+    border-style: unset;
+    padding: 10px 20px;
+    background: linear-gradient(100deg, #00ffff, #ff30cf);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    border-color: rgb(0, 0, 0);
+}
+
+textarea {
+    margin-top: 10px;
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    height: 150px;
+}
+
+#feedback {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    -webkit-text-stroke: 0.5px black;
+}
+
+h1 {
+    font-family: monospace;
+    background: linear-gradient(30deg, #08c4c4, #ff00c3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px black;
+    position: relative;
+    animation: borderMove 5s infinite, textReflect 10s infinite;
+}
+
+@keyframes borderMove {
+    0% {
+        -webkit-text-stroke-color: rgb(255, 0, 0);
+    }
+    25% {
+        -webkit-text-stroke-color: rgb(0, 255, 0);
+    }
+    50% {
+        -webkit-text-stroke-color: rgb(0, 0, 255);
+    }
+    75% {
+        -webkit-text-stroke-color: rgb(255, 255, 0);
+    }
+    100% {
+        -webkit-text-stroke-color: rgb(255, 0, 0);
+    }
+}
+
+@keyframes textReflect {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#jogarBotao, #enviarFeedbackBtn {
+    border-style: unset;
+    padding: 10px 20px;
+    color: azure;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    border-color: rgb(0, 0, 0);
+    background: linear-gradient(100deg, #05b1b1, #ff00c3);
+}
+
+.theme-checkbox {
+    display: none;
+}
+
+.theme-toggle-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 25px;
+    background-color: #e4e4e4;
+    border-radius: 15px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(500deg, #02ffff, #e100ff, #bd60c9, #00a2ff, #b602fd);
+    background-size: 1000% 1000%;
+    animation: gradientBackground 10s ease infinite;
+    border-radius: 50%;
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+.theme-checkbox:checked + .theme-toggle-btn {
+    background-color: #000000;
+}
+
+.theme-checkbox:checked + .theme-toggle-btn::before {
+    transform: translateX(25px);
+}
+
+.dark-theme {
+    background: linear-gradient(500deg, #020070, #003d6e, #350f3a, #440041, #220130);
+    background-size: 1000% 1000%;
+    animation: gradientBackground 10s ease infinite;
+    color: #fcfcfc; 
+}
+
+.dark-theme #caixaP, .dark-theme #paginaJogo, .dark-theme #resultadoPagina, .dark-theme #paginaFeedback, .dark-theme #novaPaginaFeedback {
+    background-color: #000000; 
+    color: #fff; 
+}
